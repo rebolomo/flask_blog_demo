@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>{{ gettext('Blog list') }}</h1>
+        <br>
+        <a href="{{ url_for('blog.blog_add') }}">{{ gettext('Create a blog') }} »</a>
+    </div>
+    <div class="col-md-4">
+        <div class="block">
+
+            <div class="sep20"></div>
+            <div class="shop_list clearfix">
+                {% for c in blogs %}
+                    <div id="blog-{{ c.id }}" class="item">
+                        <h3>{{ c.title }}</h3>
+                        <a href="{{ url_for('blog.blog_edit', blog_id=c.id) }}">{{ gettext('Edit') }} »</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

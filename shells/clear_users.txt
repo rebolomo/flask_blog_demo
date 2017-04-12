@@ -1,0 +1,3 @@
+User.clear()
+User.register_admin()
+User.query.all()

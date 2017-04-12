@@ -1,0 +1,2 @@
+Role.insert_roles()
+Role.query.all()
